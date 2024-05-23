@@ -11,7 +11,7 @@ router = Router()
 
 @router.message(Command("start"))
 async def start_handler(msg: Message):
-    await msg.answer("Привет! Напиши мне любое сообщение и я как ГПТ отвечу тебе.")
+    await msg.answer("Привет, от команды RealGPT! Напиши мне любое сообщение и я как ГПТ отвечу тебе.")
 
 
 @router.message()
