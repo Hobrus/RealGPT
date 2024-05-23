@@ -1,3 +1,5 @@
+import asyncio
+
 from aiogram import types, F, Router
 from aiogram.types import Message
 from aiogram.filters import Command
@@ -14,6 +16,15 @@ async def start_handler(msg: Message):
 
 @router.message()
 async def message_handler(msg: Message):
-    answer = gpt_response(msg.text)
-    # answer = await async_gpt_response(msg.text)
+    answer = await gpt_response(prompt=msg.text)
     await msg.answer(answer)
+
+
+###################################################################
+# async def test():
+#     answer = await gpt_response(prompt="test value")
+#     print(answer)
+#
+#
+# if __name__ == '__main__':
+#     asyncio.run(test())
